@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "results": [
+    { "text": "CSS", "done": true },
+    { "text": "JavaScript", "done": true },
+    { "text": "Vue", "done": true },
+    { "text": "Vit", "done": true },
+    { "text": "PHP", "done": false }
+  ]
+}
