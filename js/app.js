@@ -21,6 +21,9 @@ createApp({
       });
       this.newTodo = '';
     },
+    taskDone(todo) {
+      todo.done = !todo.done;
+    },
   },
   created() {
     this.fetchData();

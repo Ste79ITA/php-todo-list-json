@@ -64,8 +64,6 @@ body {
   padding: 2px;
 }
 
-.input:focus,
-textarea:focus {
-  color: rgb(0, 87, 87);
-  border-color: red;
+.taskDone {
+  text-decoration: line-through;
 }
