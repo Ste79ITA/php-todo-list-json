@@ -27,13 +27,14 @@ $title = 'php Todo List Json';
         <div class="container">
             <div class="todos">
                 <h1 class="todos_title">ToDo's</h1>
-                    <input class="input" type="text" placeholder="Enter a New To do" @keyup.enter="sendTodo" v-model="newTodo">
+                    <input required class="input" type="text"
+                     placeholder="Enter a New To do" @keyup.enter="sendTodo" v-model="newTodo">
                 <ul class="content">
                     <li class="todo" v-for="(todo, i) in todos">
-                        <p :class="{taskDone: todo.done}" @click="taskDone(todo)">{{ todo.text }}</p>
+                        <p :class="{taskDone: todo.done === true}" @click="taskDone(todo)">{{ todo.text }}</p>
                         <div class="icon">
                         <i @click="taskDone(todo)" class="fa-solid fa-check"></i>
-                        <i class="fa-regular fa-circle-xmark"></i>
+                        <i @click="deleteTask(i)" class="fa-regular fa-circle-xmark"></i>
                         </div>
                     </li>
                 </ul>

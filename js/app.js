@@ -14,8 +14,8 @@ createApp({
       });
     },
     sendTodo() {
+      if (this.newTodo === '') return;
       const data = { text: this.newTodo, done: false };
-      console.log(data);
       axios.post('store.php', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
@@ -23,6 +23,13 @@ createApp({
     },
     taskDone(todo) {
       todo.done = !todo.done;
+    },
+    deleteTask(i) {
+      axios.get('delete.php', {
+        params: {
+          value: i,
+        },
+      });
     },
   },
   created() {
